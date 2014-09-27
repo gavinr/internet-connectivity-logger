@@ -40,7 +40,7 @@ def main(sc):
     startDateTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     pingResponse = ping()
     writeToCsv([[startDateTime,pingResponse]])
-    sc.enter(10, 1, main, (sc,))
+    sc.enter(INTERVAL_IN_SECONDS, 1, main, (sc,))
 
 # begin the scheduled loop
 s.enter(1, 1, main, (s,))
